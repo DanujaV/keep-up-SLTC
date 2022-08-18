@@ -131,7 +131,7 @@ class Products extends Component {
                         </Grid>
                         <Grid item lg={1.5} xs={12} sm={12} md={1.5}>
                             <Card variant="outlined">
-                                <CardContent style={{ marginLeft: '20%', color: 'red' }}>
+                                <CardContent style={{ marginLeft: '13%', color: 'red' }}>
                                     <Typography variant="h5" component="div">
                                         Stock
                                     </Typography>
@@ -148,7 +148,7 @@ class Products extends Component {
                                     <Typography variant="h5" component="div">
                                         Ordered
                                     </Typography>
-                                    <Typography style={{ marginLeft: '22%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '30%' }} variant="h5" color="text.secondary">
                                         {/* {this.state.supplierCount} */}
                                         12
                                     </Typography>
@@ -157,11 +157,11 @@ class Products extends Component {
                         </Grid>
                         <Grid item lg={2} xs={12} sm={12} md={2}>
                             <Card variant="outlined">
-                                <CardContent style={{ marginLeft: '18%', color: 'red' }}>
+                                <CardContent style={{ marginLeft: '11%', color: 'red' }}>
                                     <Typography variant="h5" component="div">
                                         Low Stock
                                     </Typography>
-                                    <Typography style={{ marginLeft: '20%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '25%' }} variant="h5" color="text.secondary">
                                         {/* {this.state.supplierCount} */}
                                         41
                                     </Typography>
@@ -170,13 +170,13 @@ class Products extends Component {
                         </Grid>
                         <Grid item lg={2} xs={12} sm={12} md={2}>
                             <Card variant="outlined">
-                                <CardContent style={{ marginLeft: '18%', color: 'red' }}>
+                                <CardContent style={{ marginLeft: '10%', color: 'red' }}>
                                     <Typography variant="h5" component="div">
                                         Out Stock
                                     </Typography>
-                                    <Typography style={{ marginLeft: '20%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '30%' }} variant="h5" color="text.secondary">
                                         {/* {this.state.supplierCount} */}
-                                        65
+                                        24
                                     </Typography>
                                 </CardContent>
                             </Card>
@@ -187,7 +187,7 @@ class Products extends Component {
                                     <Typography variant="h5" component="div">
                                         Sold
                                     </Typography>
-                                    <Typography style={{ marginLeft: '20%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '15%' }} variant="h5" color="text.secondary">
                                         {/* {this.state.supplierCount} */}
                                         65
                                     </Typography>
@@ -202,7 +202,7 @@ class Products extends Component {
                                     </Typography>
                                     <Typography style={{ marginLeft: '20%' }} variant="h5" color="text.secondary">
                                         {/* {this.state.supplierCount} */}
-                                        65
+                                        87
                                     </Typography>
                                 </CardContent>
                             </Card>
@@ -213,7 +213,7 @@ class Products extends Component {
                                     <Typography variant="h5" component="div">
                                         Shipped
                                     </Typography>
-                                    <Typography style={{ marginLeft: '20%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '30%' }} variant="h5" color="text.secondary">
                                         {/* {this.state.supplierCount} */}
                                         42
                                     </Typography>
