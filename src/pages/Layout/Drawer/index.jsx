@@ -142,10 +142,10 @@ export default function MiniDrawer() {
         ,
         {
             text: 'Setting',
-            icon: <SettingsIcon/>,
+            icon: <SettingsIcon />,
             to: '/settings',
         },
-    
+
 
     ]
 
@@ -176,7 +176,7 @@ export default function MiniDrawer() {
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar position="fixed" open={open}>
-                <Toolbar>
+                <Toolbar >
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <IconButton
                             color="inherit"
