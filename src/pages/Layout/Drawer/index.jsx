@@ -190,8 +190,8 @@ export default function MiniDrawer() {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Typography variant="h6" noWrap component="div">
-                            Mini variant drawer
+                        <Typography variant="h5" noWrap component="div">
+                            Up Keep
                         </Typography>
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
