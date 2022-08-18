@@ -197,7 +197,7 @@ export default function MiniDrawer() {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="https://avatars.githubusercontent.com/u/71526158?v=4" />
+                                <Avatar alt="Remy Sharp" src="https://avatars.githubusercontent.com/u/111392185?s=400&u=6e9302419618e1f039b76bfc14e1086c1d03956c&v=4" />
                             </IconButton>
                         </Tooltip>
                         <Menu
