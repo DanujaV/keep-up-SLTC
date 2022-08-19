@@ -1,18 +1,91 @@
 import React, { Component } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Typography } from '@mui/material';
+import { Typography, Grid } from '@mui/material';
 
 class Home extends Component {
     render() {
         return (
-            <div>
-                <Card sx={{ minWidth: 275 }}>
-                    <CardContent>
-                        <Typography>hello</Typography>
-                    </CardContent>
-                </Card>
-            </div>
+            <Grid container className="pt-2" spacing={3}>
+                <Grid item lg={4} xs={12} sm={12} md={6}>
+                    <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightcoral" }}>
+                        <CardContent>
+                            <Typography variant="h5" component="div">
+                                In Stock
+                            </Typography>
+                            <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                {/* {this.state.supplierCount} */}
+                                10
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item lg={4} xs={12} sm={12} md={6}>
+                    <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightslategray" }}>
+                        <CardContent>
+                            <Typography variant="h5" component="div">
+                                Sold Items
+                            </Typography>
+                            <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                {/* {this.state.supplierCount} */}
+                                54
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item lg={4} xs={12} sm={12} md={6}>
+                    <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightgreen" }}>
+                        <CardContent>
+                            <Typography variant="h5" component="div">
+                                Law Stock
+                            </Typography>
+                            <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                {/* {this.state.supplierCount} */}
+                                24
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item lg={4} xs={12} sm={12} md={6}>
+                    <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightskyblue" }}>
+                        <CardContent>
+                            <Typography variant="h5" component="div">
+                                Cost
+                            </Typography>
+                            <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                {/* {this.state.supplierCount} */}
+                                10000.00
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item lg={4} xs={12} sm={12} md={6}>
+                    <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightpink" }}>
+                        <CardContent>
+                            <Typography variant="h5" component="div">
+                                Income
+                            </Typography>
+                            <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                {/* {this.state.supplierCount} */}
+                                150000.00
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item lg={4} xs={12} sm={12} md={6}>
+                    <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightseagreen" }}>
+                        <CardContent>
+                            <Typography variant="h5" component="div">
+                                Profit
+                            </Typography>
+                            <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                {/* {this.state.supplierCount} */}
+                                95000.00
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
+            </Grid>
         );
     }
 }
