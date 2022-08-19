@@ -139,11 +139,11 @@ class Supplier extends Component {
                         </Grid>
                         <Grid item lg={6} xs={12} sm={12} md={6}>
                             <Card variant="outlined">
-                                <CardContent style={{ marginLeft: '30%', color: 'red' }}>
-                                    <Typography variant="h5" component="div">
+                                <CardContent style={{ marginLeft: '35%', color: 'red' }}>
+                                    <Typography variant="h6" component="div" >
                                         Supplier Count
                                     </Typography>
-                                    <Typography style={{ marginLeft: '20%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '15%' }} variant="h4" color="text.secondary">
                                         {this.state.supplierCount}
                                     </Typography>
                                 </CardContent>

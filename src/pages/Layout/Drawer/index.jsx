@@ -160,11 +160,11 @@ export default function MiniDrawer() {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }} >
             <CssBaseline />
             <AppBar position="fixed" open={open}>
-                <Toolbar >
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                <Toolbar style={{backgroundColor: '#27ae60'}}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} >
                         <IconButton
                             color="inherit"
                             aria-label="open drawer"

@@ -183,12 +183,12 @@ class Order extends Component {
                             <Typography variant="h3">Place Order</Typography>
                         </Grid>
                         <Grid item lg={1.5} xs={12} sm={12} md={1.5}>
-                            <Card variant="outlined">
-                                <CardContent style={{ marginLeft: '13%', color: 'red' }}>
-                                    <Typography variant="h5" component="div">
+                            <Card variant="outlined" style={{ backgroundColor: "#636e72" }}>
+                                <CardContent style={{ marginLeft: '15%', color: 'white' }}>
+                                    <Typography variant="h6" component="div">
                                         To Pic
                                     </Typography>
-                                    <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '10%' }} variant="h4" color="white">
                                         {/* {this.state.supplierCount} */}
                                         25
                                     </Typography>
@@ -196,12 +196,12 @@ class Order extends Component {
                             </Card>
                         </Grid>
                         <Grid item lg={1.5} xs={12} sm={12} md={1.5}>
-                            <Card variant="outlined">
-                                <CardContent style={{ marginLeft: '5%', color: 'red' }}>
-                                    <Typography variant="h5" component="div">
+                            <Card variant="outlined" style={{ backgroundColor: "#636e72" }}>
+                                <CardContent style={{ marginLeft: '10%', color: 'white' }}>
+                                    <Typography variant="h6" component="div">
                                         To Ship
                                     </Typography>
-                                    <Typography style={{ marginLeft: '30%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '15%' }} variant="h4" color="white">
                                         {/* {this.state.supplierCount} */}
                                         65
                                     </Typography>
@@ -209,12 +209,12 @@ class Order extends Component {
                             </Card>
                         </Grid>
                         <Grid item lg={2} xs={12} sm={12} md={2}>
-                            <Card variant="outlined">
-                                <CardContent style={{ marginLeft: '11%', color: 'red' }}>
-                                    <Typography variant="h5" component="div">
+                            <Card variant="outlined" style={{ backgroundColor: "#636e72" }}>
+                                <CardContent style={{ marginLeft: '25%', color: 'white' }}>
+                                    <Typography variant="h6" component="div">
                                         Paid
                                     </Typography>
-                                    <Typography style={{ marginLeft: '25%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '5%' }} variant="h4" color="white">
                                         {/* {this.state.supplierCount} */}
                                         32
                                     </Typography>
@@ -222,12 +222,12 @@ class Order extends Component {
                             </Card>
                         </Grid>
                         <Grid item lg={2} xs={12} sm={12} md={2}>
-                            <Card variant="outlined">
-                                <CardContent style={{ marginLeft: '10%', color: 'red' }}>
-                                    <Typography variant="h5" component="div">
+                            <Card variant="outlined" style={{ backgroundColor: "#636e72" }}>
+                                <CardContent style={{ marginLeft: '20%', color: 'white' }}>
+                                    <Typography variant="h6" component="div">
                                         UnPaid
                                     </Typography>
-                                    <Typography style={{ marginLeft: '30%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '15%' }} variant="h4" color="white">
                                         {/* {this.state.supplierCount} */}
                                         69
                                     </Typography>
@@ -235,12 +235,12 @@ class Order extends Component {
                             </Card>
                         </Grid>
                         <Grid item lg={2} xs={12} sm={12} md={2}>
-                            <Card variant="outlined">
-                                <CardContent style={{ marginLeft: '18%', color: 'red' }}>
-                                    <Typography variant="h5" component="div">
+                            <Card variant="outlined" style={{ backgroundColor: "#636e72" }}>
+                                <CardContent style={{ marginLeft: '13%', color: 'white' }}>
+                                    <Typography variant="h6" component="div">
                                         Completed
                                     </Typography>
-                                    <Typography style={{ marginLeft: '15%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '20%' }} variant="h4" color="white">
                                         {/* {this.state.supplierCount} */}
                                         12
                                     </Typography>
@@ -248,12 +248,12 @@ class Order extends Component {
                             </Card>
                         </Grid>
                         <Grid item lg={1.75} xs={12} sm={12} md={1.75}>
-                            <Card variant="outlined">
-                                <CardContent style={{ marginLeft: '18%', color: 'red' }}>
-                                    <Typography variant="h5" component="div">
+                            <Card variant="outlined" style={{ backgroundColor: "#636e72" }}>
+                                <CardContent style={{ marginLeft: '22%', color: 'white' }}>
+                                    <Typography variant="h6" component="div">
                                         Total
                                     </Typography>
-                                    <Typography style={{ marginLeft: '20%' }} variant="h5" color="text.secondary">
+                                    <Typography style={{ marginLeft: '5%' }} variant="h4" color="white">
                                         {/* {this.state.supplierCount} */}
                                         58
                                     </Typography>
