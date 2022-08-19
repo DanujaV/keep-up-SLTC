@@ -85,6 +85,66 @@ class Home extends Component {
                         </CardContent>
                     </Card>
                 </Grid>
+                <Grid item lg={12} xs={12} sm={12} md={12}>
+                    <Card sx={{ minWidth: 275 }}>
+                        <CardContent>
+                            <Grid container spacing={3}>
+                                <Grid item lg={6} xs={12} sm={12} md={6}>
+                                    <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightsteelblue" }}>
+                                        <CardContent>
+                                            <Typography variant="h5" component="div">
+                                                To Be Picked
+                                            </Typography>
+                                            <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                                {/* {this.state.supplierCount} */}
+                                                15
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                                <Grid item lg={6} xs={12} sm={12} md={6}>
+                                    <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightyellow" }}>
+                                        <CardContent>
+                                            <Typography variant="h5" component="div">
+                                                To Be Shipped
+                                            </Typography>
+                                            <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                                {/* {this.state.supplierCount} */}
+                                                25
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                                <Grid item lg={6} xs={12} sm={12} md={6}>
+                                    <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightcyan" }}>
+                                        <CardContent>
+                                            <Typography variant="h5" component="div">
+                                                Selling Orders
+                                            </Typography>
+                                            <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                                {/* {this.state.supplierCount} */}
+                                                125
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                                <Grid item lg={6} xs={12} sm={12} md={6}>
+                                    <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightsalmon" }}>
+                                        <CardContent>
+                                            <Typography variant="h5" component="div">
+                                                Buying Orders
+                                            </Typography>
+                                            <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                                {/* {this.state.supplierCount} */}
+                                                198
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            </Grid>
+                        </CardContent>
+                    </Card>
+                </Grid>
             </Grid>
         );
     }
