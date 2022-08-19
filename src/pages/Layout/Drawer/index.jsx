@@ -133,20 +133,7 @@ export default function MiniDrawer() {
             text: 'Orders',
             icon: <ShoppingCartIcon />,
             to: '/orders',
-        },
-        {
-            text: 'Selling',
-            icon: <SellIcon />,
-            to: '/sellings',
-        },
-        ,
-        {
-            text: 'Setting',
-            icon: <SettingsIcon />,
-            to: '/settings',
-        },
-
-
+        }
     ]
 
     const settings = [

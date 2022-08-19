@@ -7,6 +7,9 @@ class Home extends Component {
     render() {
         return (
             <Grid container className="pt-2" spacing={3}>
+                <Grid item lg={12} xs={12} sm={12} md={12}>
+                    <Typography variant="h3">Dashboard</Typography>
+                </Grid>
                 <Grid item lg={4} xs={12} sm={12} md={6}>
                     <Card sx={{ minWidth: 275 }} style={{ backgroundColor: "lightcoral" }}>
                         <CardContent>

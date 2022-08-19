@@ -16,6 +16,12 @@ import Tooltip from '@mui/material/Tooltip';
 import EditIcon from '@mui/icons-material/Edit';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+
 
 class Order extends Component {
     constructor(props) {
@@ -37,7 +43,33 @@ class Order extends Component {
             alert: false,
             message: '',
             severity: '',
-
+            types: [
+                {
+                    label: 'Pick'
+                },
+                {
+                    label: 'Ship'
+                }
+            ],
+            paidStatus: [
+                {
+                    label: 'Paid'
+                },
+                {
+                    label: 'Unpaid'
+                }
+            ],
+            shipStatus: [
+                {
+                    label: 'To ship'
+                },
+                {
+                    label: 'Shipped'
+                },
+                {
+                    label: 'Normal'
+                }
+            ],
             data: [
                 {
                     invoiceId: 'IN-001',
@@ -107,7 +139,7 @@ class Order extends Component {
             btnColor: 'primary',
             formData: {
                 invoiceId: '',
-                date: '',
+                date: '09-25-2022',
                 type: '',
                 productCode: '',
                 unitPrice: '',
@@ -247,36 +279,34 @@ class Order extends Component {
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={4}>
                             <Typography variant="subtitle1">Date</Typography>
-                            <TextValidator
-                                id="outlinedbasic"
-                                placeholder="Date"
-                                variant="outlined"
-                                size="small"
-                                style={{ width: '100%' }}
-                                value={this.state.formData.date}
-                                onChange={(e) => {
-                                    let formData = this.state.formData
-                                    formData.date = e.target.value
-                                    this.setState({ formData })
-                                }}
-                                validators={['required']}
-                            />
+                            <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                <DatePicker
+                                    value={this.state.formData.date}
+                                    onChange={(newValue) => {
+                                        console.log(newValue)
+                                        let formData = this.state.formData
+                                        formData.date = newValue
+                                        this.setState({ formData })
+                                    }}
+                                    renderInput={(params) => <TextField style={{ width: '100%' }} size="small" {...params} />}
+                                />
+                            </LocalizationProvider>
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={4}>
                             <Typography variant="subtitle1">Type</Typography>
-                            <TextValidator
-                                id="outlinedbasic"
-                                placeholder="Type"
-                                variant="outlined"
-                                size="small"
-                                style={{ width: '100%' }}
-                                value={this.state.formData.type}
-                                onChange={(e) => {
-                                    let formData = this.state.formData
-                                    formData.type = e.target.value
-                                    this.setState({ formData })
+                            <Autocomplete
+                                disablePortal
+                                id="combo-box-demo"
+                                options={this.state.types}
+                                onChange={(e, value) => {
+                                    if (null != value) {
+                                        let formData = this.state.formData
+                                        formData.type = value.label
+                                        this.setState({ formData })
+                                    }
                                 }}
-                                validators={['required']}
+                                sx={{ width: '300' }}
+                                renderInput={(params) => <TextField {...params} size="small" style={{ width: '100%' }} />}
                             />
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={4}>
@@ -349,36 +379,36 @@ class Order extends Component {
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={4}>
                             <Typography variant="subtitle1">Paid Status</Typography>
-                            <TextValidator
-                                id="outlinedbasic"
-                                placeholder="Paid Status"
-                                variant="outlined"
-                                size="small"
-                                style={{ width: '100%' }}
-                                value={this.state.formData.paidStatus}
-                                onChange={(e) => {
-                                    let formData = this.state.formData
-                                    formData.paidStatus = e.target.value
-                                    this.setState({ formData })
+                            <Autocomplete
+                                disablePortal
+                                id="combo-box-demo"
+                                options={this.state.paidStatus}
+                                onChange={(e, value) => {
+                                    if (null != value) {
+                                        let formData = this.state.formData
+                                        formData.paidStatus = value.label
+                                        this.setState({ formData })
+                                    }
                                 }}
-                                validators={['required']}
+                                sx={{ width: '300' }}
+                                renderInput={(params) => <TextField {...params} size="small" style={{ width: '100%' }} />}
                             />
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={4}>
                             <Typography variant="subtitle1">Shipping Status</Typography>
-                            <TextValidator
-                                id="outlinedbasic"
-                                placeholder="Shipping Status"
-                                variant="outlined"
-                                size="small"
-                                style={{ width: '100%' }}
-                                value={this.state.formData.shippingStatus}
-                                onChange={(e) => {
-                                    let formData = this.state.formData
-                                    formData.shippingStatus = e.target.value
-                                    this.setState({ formData })
+                            <Autocomplete
+                                disablePortal
+                                id="combo-box-demo"
+                                options={this.state.shipStatus}
+                                onChange={(e, value) => {
+                                    if (null != value) {
+                                        let formData = this.state.formData
+                                        formData.shippingStatus = value.label
+                                        this.setState({ formData })
+                                    }
                                 }}
-                                validators={['required']}
+                                sx={{ width: '300' }}
+                                renderInput={(params) => <TextField {...params} size="small" style={{ width: '100%' }} />}
                             />
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={4}>
