@@ -1,11 +1,482 @@
 import React, { Component } from 'react';
+import { Grid, Typography } from "@mui/material";
+import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
+import GDSEButton from '../../components/common/Button';
+import GDSESnackBar from "../../components/common/SnackBar";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import EditIcon from '@mui/icons-material/Edit';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 class Order extends Component {
-    render() { 
+    constructor(props) {
+        super(props);
+        this.state = {
+            formData: {
+                invoiceId: '',
+                date: '',
+                type: '',
+                productCode: '',
+                unitPrice: '',
+                qty: '',
+                customerOrSupplier: '',
+                paidStatus: '',
+                shippingStatus: '',
+                address: ''
+
+            },
+            alert: false,
+            message: '',
+            severity: '',
+
+            data: [
+                {
+                    invoiceId: 'IN-001',
+                    date: '2022-09-23',
+                    type: 'ship',
+                    productCode: 'P-001',
+                    unitPrice: '150000.00',
+                    qty: '10',
+                    customerOrSupplier: 'customer',
+                    paidStatus: 'paid',
+                    shippingStatus: 'on the way',
+                    address: 'Colombo'
+                },
+                {
+                    invoiceId: 'IN-002',
+                    date: '2022-07-21',
+                    type: 'pick',
+                    productCode: 'P-002',
+                    unitPrice: '32000.00',
+                    qty: '34',
+                    customerOrSupplier: 'supplier',
+                    paidStatus: 'half',
+                    shippingStatus: 'not yet',
+                    address: 'Galle'
+                }
+            ],
+            btnLabel: 'Place Order',
+            btnClearLabel: 'Clear',
+            btnColor: 'primary',
+            btnClearColor: 'warning',
+            supplierCount: 0
+        }
+    }
+
+    loadData = async () => {
+
+    };
+
+    deleteCustomer = async (id) => {
+        console.log('delete customer');
+    };
+
+    updateCustomer = (data) => {
+        console.log(data)
+
+        this.setState({
+            btnLabel: 'Update Order',
+            btnColor: 'secondary',
+            formData: {
+                invoiceId: data.invoiceId,
+                date: data.date,
+                type: data.type,
+                productCode: data.productCode,
+                unitPrice: data.unitPrice,
+                qty: data.qty,
+                customerOrSupplier: data.customerOrSupplier,
+                paidStatus: data.paidStatus,
+                shippingStatus: data.shippingStatus,
+                address: data.address
+            }
+        });
+    };
+
+    clearFields = () => {
+        this.setState({
+            btnLabel: 'save',
+            btnColor: 'primary',
+            formData: {
+                invoiceId: '',
+                date: '',
+                type: '',
+                productCode: '',
+                unitPrice: '',
+                qty: '',
+                customerOrSupplier: '',
+                paidStatus: '',
+                shippingStatus: '',
+                address: ''
+            },
+        });
+    };
+
+
+    submitCustomer = async () => {
+        let formData = this.state.formData;
+
+        if (this.state.btnLabel === "save") {
+            console.log('save');
+        } else {
+            console.log('update');
+        }
+    };
+
+    setSupplierCount = () => {
+        this.setState({
+            supplierCount: this.state.data.length
+        })
+    }
+
+    componentDidMount() {
+        this.loadData();
+        this.setSupplierCount();
+    }
+
+    render() {
         return (
-            <h1>Order Screen</h1>
+            <>
+                <ValidatorForm ref="form" className="pt-2" onSubmit={this.submitCustomer} >
+                    <Grid container className="pt-2" spacing={3}>
+                        <Grid item lg={12} xs={12} sm={12} md={12}>
+                            <Typography variant="h3">Place Order</Typography>
+                        </Grid>
+                        <Grid item lg={1.5} xs={12} sm={12} md={1.5}>
+                            <Card variant="outlined">
+                                <CardContent style={{ marginLeft: '13%', color: 'red' }}>
+                                    <Typography variant="h5" component="div">
+                                        To Pic
+                                    </Typography>
+                                    <Typography style={{ marginLeft: '18%' }} variant="h5" color="text.secondary">
+                                        {/* {this.state.supplierCount} */}
+                                        25
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid item lg={1.5} xs={12} sm={12} md={1.5}>
+                            <Card variant="outlined">
+                                <CardContent style={{ marginLeft: '5%', color: 'red' }}>
+                                    <Typography variant="h5" component="div">
+                                        To Ship
+                                    </Typography>
+                                    <Typography style={{ marginLeft: '30%' }} variant="h5" color="text.secondary">
+                                        {/* {this.state.supplierCount} */}
+                                        65
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid item lg={2} xs={12} sm={12} md={2}>
+                            <Card variant="outlined">
+                                <CardContent style={{ marginLeft: '11%', color: 'red' }}>
+                                    <Typography variant="h5" component="div">
+                                        Paid
+                                    </Typography>
+                                    <Typography style={{ marginLeft: '25%' }} variant="h5" color="text.secondary">
+                                        {/* {this.state.supplierCount} */}
+                                        32
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid item lg={2} xs={12} sm={12} md={2}>
+                            <Card variant="outlined">
+                                <CardContent style={{ marginLeft: '10%', color: 'red' }}>
+                                    <Typography variant="h5" component="div">
+                                        UnPaid
+                                    </Typography>
+                                    <Typography style={{ marginLeft: '30%' }} variant="h5" color="text.secondary">
+                                        {/* {this.state.supplierCount} */}
+                                        69
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid item lg={2} xs={12} sm={12} md={2}>
+                            <Card variant="outlined">
+                                <CardContent style={{ marginLeft: '18%', color: 'red' }}>
+                                    <Typography variant="h5" component="div">
+                                        Completed
+                                    </Typography>
+                                    <Typography style={{ marginLeft: '15%' }} variant="h5" color="text.secondary">
+                                        {/* {this.state.supplierCount} */}
+                                        12
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid item lg={1.75} xs={12} sm={12} md={1.75}>
+                            <Card variant="outlined">
+                                <CardContent style={{ marginLeft: '18%', color: 'red' }}>
+                                    <Typography variant="h5" component="div">
+                                        Total
+                                    </Typography>
+                                    <Typography style={{ marginLeft: '20%' }} variant="h5" color="text.secondary">
+                                        {/* {this.state.supplierCount} */}
+                                        58
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Typography variant="subtitle1">Invoice Id</Typography>
+                            <TextValidator
+                                id="outlinedbasic"
+                                placeholder="Invoice Id"
+                                variant="outlined"
+                                size="small"
+                                style={{ width: '100%' }}
+                                value={this.state.formData.invoiceId}
+                                onChange={(e) => {
+                                    let formData = this.state.formData
+                                    formData.invoiceId = e.target.value
+                                    this.setState({ formData })
+                                }}
+                                validators={['required']}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Typography variant="subtitle1">Date</Typography>
+                            <TextValidator
+                                id="outlinedbasic"
+                                placeholder="Date"
+                                variant="outlined"
+                                size="small"
+                                style={{ width: '100%' }}
+                                value={this.state.formData.date}
+                                onChange={(e) => {
+                                    let formData = this.state.formData
+                                    formData.date = e.target.value
+                                    this.setState({ formData })
+                                }}
+                                validators={['required']}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Typography variant="subtitle1">Type</Typography>
+                            <TextValidator
+                                id="outlinedbasic"
+                                placeholder="Type"
+                                variant="outlined"
+                                size="small"
+                                style={{ width: '100%' }}
+                                value={this.state.formData.type}
+                                onChange={(e) => {
+                                    let formData = this.state.formData
+                                    formData.type = e.target.value
+                                    this.setState({ formData })
+                                }}
+                                validators={['required']}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Typography variant="subtitle1">Product Code</Typography>
+                            <TextValidator
+                                id="outlinedbasic"
+                                placeholder="Product Code"
+                                variant="outlined"
+                                size="small"
+                                style={{ width: '100%' }}
+                                value={this.state.formData.productCode}
+                                onChange={(e) => {
+                                    let formData = this.state.formData
+                                    formData.productCode = e.target.value
+                                    this.setState({ formData })
+                                }}
+                                validators={['required']}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Typography variant="subtitle1">Unit Price</Typography>
+                            <TextValidator
+                                id="outlinedbasic"
+                                placeholder="Unit Price"
+                                variant="outlined"
+                                size="small"
+                                style={{ width: '100%' }}
+                                value={this.state.formData.unitPrice}
+                                onChange={(e) => {
+                                    let formData = this.state.formData
+                                    formData.unitPrice = e.target.value
+                                    this.setState({ formData })
+                                }}
+                                validators={['required']}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Typography variant="subtitle1">Quantity</Typography>
+                            <TextValidator
+                                id="outlinedbasic"
+                                placeholder="Quantity"
+                                variant="outlined"
+                                size="small"
+                                style={{ width: '100%' }}
+                                value={this.state.formData.qty}
+                                onChange={(e) => {
+                                    let formData = this.state.formData
+                                    formData.qty = e.target.value
+                                    this.setState({ formData })
+                                }}
+                                validators={['required']}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Typography variant="subtitle1">Customer/Supplier</Typography>
+                            <TextValidator
+                                id="outlinedbasic"
+                                placeholder="Customer/Supplier"
+                                variant="outlined"
+                                size="small"
+                                style={{ width: '100%' }}
+                                value={this.state.formData.customerOrSupplier}
+                                onChange={(e) => {
+                                    let formData = this.state.formData
+                                    formData.customerOrSupplier = e.target.value
+                                    this.setState({ formData })
+                                }}
+                                validators={['required']}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Typography variant="subtitle1">Paid Status</Typography>
+                            <TextValidator
+                                id="outlinedbasic"
+                                placeholder="Paid Status"
+                                variant="outlined"
+                                size="small"
+                                style={{ width: '100%' }}
+                                value={this.state.formData.paidStatus}
+                                onChange={(e) => {
+                                    let formData = this.state.formData
+                                    formData.paidStatus = e.target.value
+                                    this.setState({ formData })
+                                }}
+                                validators={['required']}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Typography variant="subtitle1">Shipping Status</Typography>
+                            <TextValidator
+                                id="outlinedbasic"
+                                placeholder="Shipping Status"
+                                variant="outlined"
+                                size="small"
+                                style={{ width: '100%' }}
+                                value={this.state.formData.shippingStatus}
+                                onChange={(e) => {
+                                    let formData = this.state.formData
+                                    formData.shippingStatus = e.target.value
+                                    this.setState({ formData })
+                                }}
+                                validators={['required']}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
+                            <Typography variant="subtitle1">Address</Typography>
+                            <TextValidator
+                                id="outlinedbasic"
+                                placeholder="Address"
+                                variant="outlined"
+                                size="small"
+                                style={{ width: '100%' }}
+                                value={this.state.formData.address}
+                                onChange={(e) => {
+                                    let formData = this.state.formData
+                                    formData.address = e.target.value
+                                    this.setState({ formData })
+                                }}
+                                validators={['required']}
+                            />
+                        </Grid>
+                        <Grid container style={{ marginTop: '10px' }} direction="row" justifyContent="flex-end" alignItems="center">
+                            <GDSEButton style={{ marginRight: '10px' }} onClick={this.clearFields} label={this.state.btnClearLabel} size="small" color={this.state.btnClearColor} variant="contained" />
+                            <GDSEButton label={this.state.btnLabel} type="submit" size="small" color={this.state.btnColor} variant="contained" />
+                        </Grid>
+                    </Grid>
+                </ValidatorForm>
+                <Grid contaner style={{ marginTop: '15px' }}>
+                    <TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 650 }} aria-label="customer table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell align="left">Invoice Id</TableCell>
+                                    <TableCell align="left">Date</TableCell>
+                                    <TableCell align="left">Type</TableCell>
+                                    <TableCell align="left">Product Code</TableCell>
+                                    <TableCell align="left">Unit Price</TableCell>
+                                    <TableCell align="left">Quantity</TableCell>
+                                    <TableCell align="left">Customer/Supplier</TableCell>
+                                    <TableCell align="left">Paid Status</TableCell>
+                                    <TableCell align="left">Shipping Status</TableCell>
+                                    <TableCell align="left">Address</TableCell>
+                                    <TableCell align="left">Action</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {
+                                    this.state.data.map((row) => (
+                                        <TableRow>
+                                            <TableCell align="left">{row.invoiceId}</TableCell>
+                                            <TableCell align="left">{row.date}</TableCell>
+                                            <TableCell align="left">{row.type}</TableCell>
+                                            <TableCell align="left">{row.productCode}</TableCell>
+                                            <TableCell align="left">{row.unitPrice}</TableCell>
+                                            <TableCell align="left">{row.qty}</TableCell>
+                                            <TableCell align="left">{row.customerOrSupplier}</TableCell>
+                                            <TableCell align="left">{row.paidStatus}</TableCell>
+                                            <TableCell align="left">{row.shippingStatus}</TableCell>
+                                            <TableCell align="left">{row.address}</TableCell>
+                                            <TableCell align="left">
+                                                <Tooltip title="Edit">
+                                                    <IconButton
+                                                        onClick={() => {
+                                                            console.log("edit icon clicked!")
+                                                            this.updateCustomer(row);
+                                                        }}
+                                                    >
+                                                        <EditIcon color="primary" />
+                                                    </IconButton>
+                                                </Tooltip>
+                                                <Tooltip title="Delete">
+                                                    <IconButton
+                                                        onClick={() => {
+                                                            this.deleteCustomer(row.id)
+                                                        }}
+                                                    >
+                                                        <DeleteIcon color="error" />
+                                                    </IconButton>
+                                                </Tooltip>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))
+                                }
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Grid>
+                <GDSESnackBar
+                    open={this.state.alert}
+                    onClose={() => {
+                        this.setState({ alert: false })
+                    }}
+                    message={this.state.message}
+                    autoHideDuration={3000}
+                    severity={this.state.severity}
+                    variant="filled"
+                />
+            </>
         );
     }
 }
- 
+
 export default Order;
