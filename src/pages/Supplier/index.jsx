@@ -262,13 +262,13 @@ class Supplier extends Component {
                         <Table sx={{ minWidth: 650 }} aria-label="customer table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell align="left">Id</TableCell>
-                                    <TableCell align="left">Name</TableCell>
-                                    <TableCell align="left">Address</TableCell>
-                                    <TableCell align="left">Contact Number</TableCell>
-                                    <TableCell align="left">Email</TableCell>
-                                    <TableCell align="left">Productss</TableCell>
-                                    <TableCell align="left">Action</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">ID</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Name</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Address</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Contact Number</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Email</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Productss</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Action</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>

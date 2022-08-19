@@ -439,17 +439,17 @@ class Order extends Component {
                         <Table sx={{ minWidth: 650 }} aria-label="customer table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell align="left">Invoice Id</TableCell>
-                                    <TableCell align="left">Date</TableCell>
-                                    <TableCell align="left">Type</TableCell>
-                                    <TableCell align="left">Product Code</TableCell>
-                                    <TableCell align="left">Unit Price</TableCell>
-                                    <TableCell align="left">Quantity</TableCell>
-                                    <TableCell align="left">Customer/Supplier</TableCell>
-                                    <TableCell align="left">Paid Status</TableCell>
-                                    <TableCell align="left">Shipping Status</TableCell>
-                                    <TableCell align="left">Address</TableCell>
-                                    <TableCell align="left">Action</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Invoice Id</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Date</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Type</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Product Code</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Unit Price</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Quantity</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Customer/Supplier</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Paid Status</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Shipping Status</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Address</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Action</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>

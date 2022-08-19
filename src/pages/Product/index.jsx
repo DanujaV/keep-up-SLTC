@@ -333,13 +333,13 @@ class Products extends Component {
                         <Table sx={{ minWidth: 650 }} aria-label="customer table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell align="left">Item Code</TableCell>
-                                    <TableCell align="left">Item Name</TableCell>
-                                    <TableCell align="left">Supplier Id</TableCell>
-                                    <TableCell align="left">Quantity</TableCell>
-                                    <TableCell align="left">Unit Price</TableCell>
-                                    <TableCell align="left">Status</TableCell>
-                                    <TableCell align="left">Action</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Item Code</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Item Name</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Supplier Id</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Quantity</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Unit Price</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Status</TableCell>
+                                    <TableCell style={{fontWeight: 1000}} align="left">Action</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
